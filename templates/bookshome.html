@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Books Home</h1>
+    <form style="display: flex; width: 50vw; gap: .5rem; align-items: end; flex-direction: column;" method="POST">
+        {% csrf_token %}
+        <a href="/logout"><button formaction="/logout">Logout</button></a>
+        <a href="#"><button>User Details</button></a>
+    </form>
+    <h3>User Details</h3>
+    {% for i in data%}
+    <label> Name: </label> {{ i.name }} <br>
+    <label> Email: </label> {{ i.email }} <br>
+    <label> UserName: </label> {{ i.username }} <br>
+    {% endfor %}
+    
+</body>
+</html>

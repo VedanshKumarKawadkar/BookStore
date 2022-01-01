@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Sign-Up</title>
+</head>
+<body>
+    <h1>User Sign-Up</h1>
+    <form method="POST">
+        <div>
+            {% csrf_token %}
+            {% include "messages.html"%}
+            <label>First Name</label>
+            <input type="text" required name="first">
+            
+            <label>Middle Name</label>
+            <input type="text" name="mid">
+            
+            <label>Last Name</label>
+            <input type="text" required name="last">
+            <br><br>
+            <label>Phone Number</label>
+            <input type="tel" name="phone">
+            
+            <label>Email ID</label>
+            <input type="email" required name="email">
+
+            <label>Username</label>
+            <input type="text" required name="username">
+            <br><br>
+            <label>Password</label>
+            <input type="password" required name="pass1">
+            
+            <label>Confirm Password</label>
+            <input type="password"  required name="pass2">
+            
+            <br><br>
+            <button type="submit" formaction="/signup">Submit</button>
+            <br>
+        </div>
+    </form>
+    <h3>OR</h3>
+    <a href="/login"><button type="submit" name="login">Login</button></a>
+
+</body>
+</html>
